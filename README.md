@@ -1,50 +1,54 @@
-# React + TypeScript + Vite
+# Sons of Vancouver Distillery - Spirits Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains all necessary code and details for building the Sons of Vancouver Spirits Calculator. The app is written primarally in TypeScript utilizing `vite`, `react`, `tailwind`, and `shacdn-ui`. `Cordova` is used for bundling this application as a native application for various platforms, currently android, but in the future potentially as an iOS, or PC/Mac electron app. 
 
-Currently, two official plugins are available:
+## Repository File Structure
+- `./`	
+  *Description:* The project root contains all the necessary configuration, and supporting files for the application. 
+- `./cordova`  
+  *Description:* The cordova directory is where the cordova related configuration resides.
+  All cordova cli commands must be run from this directory.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  - `./cordova/res`  
+    *Description:* All native application resources: icons, splashscreen, and images
 
-## Expanding the ESLint configuration
+  - `./cordova/www`  
+    *Description:* Configured to be vites build output directory, this holds the application 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- `./public`  
+  *Description:* Static assets like images reside here
 
-- Configure the top-level `parserOptions` property like this:
+- `./src`  
+  *Description:* All project code resides here
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+
+## Getting Setup
+
+**Note:** This application was developed using `Node v18.20.4`, `Cordova v12.0.0`. Both Node and Cordova must be installed on the system building the application. 
+
+- Install all supporting libraries and platforms 	
+<small>**Note:** `npm install` must be run twice, once for each package json. While this is not ideal it is necesary as our application was written with `modules` rather than `commonjs` which cordova requires. </small>
+
+```bash
+npm install
+cd cordova
+npm install
+cordova platform add android
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Running in development mode (Hot Module Replacement or live preview)
+```bash
+npm run dev
+```
+- Creating a release build 	
+<small>**Note:** The build output directory has been set to `./cordova/www` rather than `./dist`. These files are what you would upload to your webserver if hosting as a webapp.</small>
+```bash
+npm run build
+``` 
+- Running on Android	
+<small>**Note:** These commands use `cordova` command, and must be run from the `./cordova` directory. This command will look for any running android emulator, or connected android device in developer mode to install to.</small>
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cordova run android
 ```
