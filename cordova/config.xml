@@ -21,5 +21,10 @@
         <icon density="xhdpi" src="res/icon/android/xhdpi.png"/>
         <icon density="xxhdpi" src="res/icon/android/xxhdpi.png"/>
         <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png"/>
-    </platform>
+        </platform>
+    <platform name="electron">
+    <icon src="res/electron/icons/icon.icns" />
+
+    <preference name="ElectronSettingsFilePath" value="res/electron/settings.json" />
+</platform>
 </widget>
