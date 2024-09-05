@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Cordova build files
+cordova/www/
+cordova/platforms/
+cordova/plugins/
+cordova/hooks/
+cordova/node_modules/
+cordova/build.json
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# macOS specific
+.DS_Store
+
+# Environment files
+.env

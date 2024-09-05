@@ -1,0 +1,25 @@
+{
+  "name": "io.sov.spiritscalc",
+  "displayName": "Spirits Calc",
+  "version": "1.0.0",
+  "description": "Calculations helpful to distillers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "James Pike <jaems.pike@mobutils.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^13.0.0",
+    "cordova-browser": "^7.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "browser",
+      "android"
+    ]
+  }
+}
