@@ -13,8 +13,8 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 5000000,
       },
       manifest: {
-        name: 'Sons of Vancouver Spirits Calculator',
-        short_name: 'Spirits Calc',
+        name: 'Spirits Calculator',
+        short_name: 'SpiritsCalc',
         theme_color: '#ffffff',
         icons: [
           {
