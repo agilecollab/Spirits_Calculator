@@ -1,6 +1,6 @@
 # Sons of Vancouver Distillery - Spirits Calculator
 
-This repository contains all necessary code and details for building the Sons of Vancouver Spirits Calculator. This app is primarly a SPA (Single Page Appliation) setup as a PWA (Progressive Web App). The app is written primarally in JS & TS utilizing `vite`, `react`, `tailwind`, and `shacdn-ui`. `Cordova` is used for bundling this application as a native application for various platforms, currently android, but in the future potentially as an iOS, or PC/Mac electron app. 
+This repository contains all necessary code and details for building the Sons of Vancouver Spirits Calculator. This app is primarly a SPA (Single Page Appliation) setup as a PWA (Progressive Web App). The app is written primarally in JS & TS utilizing `vite`, `react`, `tailwind`, and `shacdn-ui`. `Cordova` is used for bundling this application as a native application for various platforms, currently android, but in the future potentially as an iOS, or PC/Mac electron app.. 
 
 ## Repository File Structure
 - `./`	
