@@ -25,8 +25,6 @@ jobs:
     - run: npm ci
     - name: Install Cordova globally
       run: npm install -g cordova
-    - run: cd cordova && npm ci && cordova prepare
-    - run: cd ..
     - run: npm run build --if-present
     - run: npm test:ci
     - run: cd cordova && cordova build android --release
