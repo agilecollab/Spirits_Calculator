@@ -7,7 +7,6 @@ export const lookupIndexByTempAndSG = (temp: number, sg: number): number => {
   const toIndex = arrayIndex + ( FirstDimensionSize * 5 ) 
   let fromIndex = arrayIndex
   let found = false
-  console.log(sg, typeof(sg))
    do {
     if( alcArray[fromIndex + 1]?.toFixed(1) === sg.toFixed(1)) {
       found = true

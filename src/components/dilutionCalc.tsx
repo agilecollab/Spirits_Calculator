@@ -114,7 +114,7 @@ function DilutionCalc() {
           </div>
           <div className="space-y-1">
             <Label htmlFor="water_temp_centigrade">Water Temp (&deg;C)</Label>
-            <Input id="dilution_amount" type="number" value={ waterTemp } onChange={(e)=>{ setWaterTemp(parseFloat(e.target.value)) }}/>
+            <Input id="water_temp_centigrade" type="number" value={ waterTemp } onChange={(e)=>{ setWaterTemp(parseFloat(e.target.value)) }}/>
           </div>
         </div>
       </CardContent>
@@ -122,7 +122,7 @@ function DilutionCalc() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Water to add</CardDescription>
-            <CardTitle className="text-2xl sm:text-3xl lg:text-4xl">{ isNaN(calcMass) ? '--' : calcMass.toFixed(1)}&nbsp;Kg</CardTitle>
+            <CardTitle className="text-2xl sm:text-3xl lg:text-4xl" data-testid="waterToAddMass">{ isNaN(calcMass) ? '--' : calcMass.toFixed(1)}&nbsp;Kg</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-xs text-muted-foreground">Corrected for temp.</div>
@@ -131,7 +131,7 @@ function DilutionCalc() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>Water to add</CardDescription>
-            <CardTitle className="text-2xl sm:text-3xl lg:text-4xl">{ isNaN(calcVolume) ? '--' : calcVolume.toFixed(1)}&nbsp;L</CardTitle>
+            <CardTitle className="text-2xl sm:text-3xl lg:text-4xl" data-testid="waterToAddVolume">{ isNaN(calcVolume) ? '--' : calcVolume.toFixed(1)}&nbsp;L</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-xs text-muted-foreground">Corrected for temp.</div>

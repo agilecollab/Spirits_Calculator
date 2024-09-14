@@ -36,7 +36,7 @@ function VolumeCalc() {
 
   const compute = () => {
     const index = lookupIndexByTempAndSG(temperature, specificGravity)
-
+  
     if ( index === -1 ) return
     const conversionFactor : number = amountUnit === 'L' ? getLiterToLiterConversionFactor(index) : getKGtoLiterConversionFactor(index)
     const correctedAmount = parseFloat(amount.toString()) * parseFloat(conversionFactor.toString())
@@ -47,7 +47,6 @@ function VolumeCalc() {
   }
 
   useEffect(()=>{
-    console.log("specificGravity", specificGravity, typeof(specificGravity), "temperature", temperature, typeof(temperature))
 
     if(specificGravity < 780.0) {
       return
@@ -156,7 +155,7 @@ function VolumeCalc() {
         <Card  className="text-center">
           <CardHeader className="pb-2">
             <CardDescription>Spirits</CardDescription>
-            <CardTitle className="text-xl sm:text-2xl lg:text-3xl">{ isNaN(calcLitersOfSpirit) ? '--' : calcLitersOfSpirit.toFixed(1) }&nbsp;L</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl lg:text-3xl" data-testid="volumeSpirits">{ isNaN(calcLitersOfSpirit) ? '--' : calcLitersOfSpirit.toFixed(1) }&nbsp;L</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-xs text-muted-foreground">@&nbsp;20&deg;C</div>
@@ -166,7 +165,7 @@ function VolumeCalc() {
         <Card className="text-center">
           <CardHeader className="pb-2">
             <CardDescription>Abs<span className="hidden sm:inline">olute</span> Ethyl Alc<span className="hidden sm:inline">ohol</span></CardDescription>
-            <CardTitle className="text-xl sm:text-2xl lg:text-3xl">{ isNaN(calcLitersOfEthanol) ? '--' : calcLitersOfEthanol.toFixed(1) }&nbsp;L</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl lg:text-3xl" data-testid="volumeAlcohol">{ isNaN(calcLitersOfEthanol) ? '--' : calcLitersOfEthanol.toFixed(1) }&nbsp;L</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-xs text-muted-foreground">@&nbsp;20&deg;C</div>
@@ -177,10 +176,10 @@ function VolumeCalc() {
 
           <CardHeader className="pb-2">
             <CardDescription>%&nbsp;Alcohol</CardDescription>
-            <CardTitle className="text-xl sm:text-2xl lg:text-3xl">{ isNaN(calcAlcoholPercentage) ? '--' : calcAlcoholPercentage }&nbsp;%</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl lg:text-3xl" data-testid="alcoholPercentage">{ isNaN(calcAlcoholPercentage) ? '--' : calcAlcoholPercentage }&nbsp;%</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-xs text-muted-foreground">{ isNaN(calcAlcoholPercentage) ? '--' : (calcAlcoholPercentage * 2).toFixed(1) } Proof</div>
+            <div className="text-xs text-muted-foreground" data-testid="proof">{ isNaN(calcAlcoholPercentage) ? '--' : (calcAlcoholPercentage * 2).toFixed(1) } Proof</div>
           </CardContent>
         </Card>
       </CardFooter>
