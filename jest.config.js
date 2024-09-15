@@ -1,3 +1,7 @@
+// jest.config.js
+import { pathsToModuleNameMapper } from 'ts-jest';
+import { compilerOptions } from './tsconfig.json';
+
 /** @type {import('ts-jest').JestConfigWithTsJest} **/
 export default {
   //testEnvironment: "node",
@@ -9,7 +13,7 @@ export default {
   },
 
   testEnvironment: 'jsdom',
-  "moduleNameMapper": {
-    "^@/(.*)$": "<rootDir>/src/$1"
-  },
+
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
+
 };
